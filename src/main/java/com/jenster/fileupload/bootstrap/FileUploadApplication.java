@@ -1,26 +1,23 @@
 package com.jenster.fileupload.bootstrap;
 
-import org.apache.tika.Tika;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.io.File;
 import java.io.IOException;
-
 @SpringBootApplication
-public class FileUploadApplication {
+//WITHOUT this line, the app won't find the api endpoints
+@ComponentScan(basePackages = {"com.jenster.fileupload"})
+
+public class FileUploadApplication  extends SpringBootServletInitializer {
+
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(FileUploadApplication.class, args);
-        File helloTextFile = new File("hello.txt");
-        //really a mp3 file
-File helloSong = new File("07 Hello.jpg");
 
-        Tika tika = new Tika();
-        String detect = tika.detect(helloTextFile);
-        System.out.println(detect);
-        String detect2 = tika.detect(helloSong);
-        System.out.println(detect2);
     }
 
 }
