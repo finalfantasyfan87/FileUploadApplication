@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import java.io.File;
 import java.io.IOException;
 @SpringBootApplication
-//WITHOUT this line, the app won't find the api endpoints
 @ComponentScan(basePackages = {"com.jenster.fileupload"})
 
 public class FileUploadApplication  extends SpringBootServletInitializer {
