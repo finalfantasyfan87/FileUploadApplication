@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 
 public interface FileService {
-    public ArrayList<String> getContentOfTestFiles() throws IOException;
+    ArrayList<String> getContentOfTestFiles() throws IOException;
 }
